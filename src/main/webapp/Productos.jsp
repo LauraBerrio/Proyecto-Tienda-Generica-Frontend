@@ -93,7 +93,7 @@
     </nav>
 
     <main>
-        <form id="form-people" class="form-people" action="Controlador" method="get">
+        <form id="form-people" class="form-people" action="Controlador" method="post">
         <h2 id="title-section" class="title-section">Productos</h2>
         <div class="file-section" id="file-section">
             <input type="file" id="input-file" class="input-file" accept=".csv"/>
