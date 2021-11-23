@@ -34,36 +34,20 @@
 
     <nav class="navbar">
         <div>
-            <a class="btn-admin" id="btn-home" href="Controlador?menu=menu">
+            <a class="btn-admin" id="btn-home" href="ControladorUsuarios?menu=menu">
                 <span class="btn-span">Inicio</span>
                 <div class="logo">
                 </div>
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin" id="btn-users" href="Controlador?menu=Usuarios&accion=Listar">
-                <span class="btn-span">Usuarios</span>
-                <img src="./images/user.svg" alt="user">
-            </a>
-            <a class="btn-admin white" id="btn-customers" href="Controlador?menu=Clientes&accion=Listar">
+            <a class="btn-admin white" id="btn-customers" href="ControladorUsuarios?menu=Clientes&accion=Listar">
                 <span class="btn-span">Clientes</span>
                 <img src="./images/customer.svg" alt="customer">
             </a>
-            <a class="btn-admin" id="btn-suppliers" href="Controlador?menu=Proveedores&accion=Listar">
-                <span class="btn-span">Proveedores</span>
-                <img src="./images/supplier.svg" alt="supplier">
-            </a>
-            <a class="btn-admin" id="btn-products" href="Controlador?menu=Productos&accion=Listar">
-                <span class="btn-span">Productos</span>
-                <img src="./images/product.svg" alt="product">
-            </a>
-            <a class="btn-admin" id="btn-sales" href="Controlador?menu=Ventas&accion=Listar">
+            <a class="btn-admin" id="btn-sales" href="ControladorUsuarios?menu=Ventas&accion=Listar">
                 <span class="btn-span">Ventas</span>
                 <img src="./images/sale.svg" alt="sales">
-            </a>
-            <a class="btn-admin" id="btn-reports" href="./Reportes.jsp">
-                <span class="btn-span">Reportes</span>
-                <img src="./images/report.svg" alt="reports">
             </a>
         </div>
         <div>
@@ -101,7 +85,7 @@
                 <i class="fas fa-times close-message"></i>
             </div>
         </section> -->
-        <form id="form-people" class="form-people" action="Controlador" method="get">
+        <form id="form-people" class="form-people" action="ControladorUsuarios" method="get">
             <input type="hidden" name="menu" value="Clientes">
             <h2 id="title-section" class="title-section">Clientes</h2>
             <div class="input-group-section" id="input-group-section">
