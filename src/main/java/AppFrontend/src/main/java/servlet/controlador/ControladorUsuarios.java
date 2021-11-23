@@ -29,7 +29,6 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Ventas;
 public class ControladorUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	// ***********variables generales dentro de la clase controlador
-	// *****************
 	double totalapagar = 0, totalVenta = 0;
 	long codProducto = 0;
 	double valor_iva = 0 , subtotaliva = 0, acusubtotal = 0;
