@@ -31,18 +31,18 @@
 
     <nav class="navbar">
         <div>
-            <a class="btn-admin white" id="btn-home" href="ControladorUsuarios?menu=menu">
+            <a class="btn-admin white" id="btn-home" href="ControladorUsuarios?menuUsuarios=menuUsuarios">
                 <span class="btn-span">Inicio</span>
                 <div class="logo">
                 </div>
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin" id="btn-customers" href="ControladorUsuarios?menu=Clientes&accion=Listar">
+            <a class="btn-admin" id="btn-customers" href="ControladorUsuarios?menu=clientesUsuarios&accion=Listar">
                 <span class="btn-span">Clientes</span>
                 <img src="./images/customer.svg" alt="customer">
             </a>
-            <a class="btn-admin" id="btn-sales" href="ControladorUsuarios?menu=Ventas&accion=Listar">
+            <a class="btn-admin" id="btn-sales" href="ControladorUsuarios?menuUsuarios=ventasUsuarios&accion=Listar">
                 <span class="btn-span">Ventas</span>
                 <img src="./images/sale.svg" alt="sales">
             </a>

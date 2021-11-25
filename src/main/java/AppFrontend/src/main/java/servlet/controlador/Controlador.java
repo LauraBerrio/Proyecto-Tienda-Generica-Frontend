@@ -183,14 +183,16 @@ public class Controlador extends HttpServlet {
 			if (accion.equals("Agregar")) {
 				if (request.getParameter("txtcedula") != "" && request.getParameter("txtnombre") != ""
 						&& request.getParameter("txtemail") != "" && request.getParameter("txtusuario") != ""
-						&& request.getParameter("txtpassword") != "" && request.getParameter("txtciudad") != "") {
+						&& request.getParameter("txtpassword") != "" && request.getParameter("idCiudad") != ""
+						&& request.getParameter("txtrol") != "") {
 					Usuarios usuario = new Usuarios();
 					usuario.setCedulaUsuario(Long.parseLong(request.getParameter("txtcedula")));
 					usuario.setNombreUsuario(request.getParameter("txtnombre"));
 					usuario.setEmailUsuario(request.getParameter("txtemail"));
 					usuario.setUsuario(request.getParameter("txtusuario"));
 					usuario.setPassword(request.getParameter("txtpassword"));
-					usuario.setCiudad(request.getParameter("txtciudad"));
+					usuario.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
+					usuario.setRol(request.getParameter("txtrol"));
 
 					int respuesta = 0;
 					try {
@@ -259,14 +261,16 @@ public class Controlador extends HttpServlet {
 				if (request.getParameter("txtcedula") != "") {
 					if (request.getParameter("txtcedula") != "" && request.getParameter("txtnombre") != ""
 							&& request.getParameter("txtemail") != "" && request.getParameter("txtusuario") != ""
-							&& request.getParameter("txtpassword") != "" && request.getParameter("txtciudad") != "") {
+							&& request.getParameter("txtpassword") != "" && request.getParameter("idCiudad") != ""
+							&& request.getParameter("txtrol") != "") {
 						Usuarios usuario = new Usuarios();
 						usuario.setCedulaUsuario(Long.parseLong(request.getParameter("txtcedula")));
 						usuario.setNombreUsuario(request.getParameter("txtnombre"));
 						usuario.setEmailUsuario(request.getParameter("txtemail"));
 						usuario.setUsuario(request.getParameter("txtusuario"));
 						usuario.setPassword(request.getParameter("txtpassword"));
-						usuario.setCiudad(request.getParameter("txtciudad"));
+						usuario.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
+						usuario.setRol(request.getParameter("txtrol"));
 
 						int respuesta = 0;
 						try {
@@ -512,14 +516,16 @@ public class Controlador extends HttpServlet {
 			} else if (accion.equals("Agregar")) {
 				if (request.getParameter("txtcedula") != "" && request.getParameter("txtdireccion") != ""
 						&& request.getParameter("txtemail") != "" && request.getParameter("txtnombre") != ""
-						&& request.getParameter("txttelefono") != "" && request.getParameter("txtciudad") != "") {
+						&& request.getParameter("txttelefono") != "" && request.getParameter("idCiudad") != ""
+						&& request.getParameter("txtrol") != "") {
 					Clientes cliente = new Clientes();
 					cliente.setCedulaCliente(Long.parseLong(request.getParameter("txtcedula")));
 					cliente.setDireccionCliente(request.getParameter("txtdireccion"));
 					cliente.setEmailCliente(request.getParameter("txtemail"));
 					cliente.setNombreCliente(request.getParameter("txtnombre"));
 					cliente.setTelefonoCliente(request.getParameter("txttelefono"));
-					cliente.setCiudad(request.getParameter("txtciudad"));
+					cliente.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
+					cliente.setRol(request.getParameter("txtrol"));
 
 					int respuesta = 0;
 					try {
@@ -586,14 +592,16 @@ public class Controlador extends HttpServlet {
 				if (request.getParameter("txtcedula") != "") {
 					if (request.getParameter("txtcedula") != "" && request.getParameter("txtdireccion") != ""
 							&& request.getParameter("txtemail") != "" && request.getParameter("txtnombre") != ""
-							&& request.getParameter("txttelefono") != "" && request.getParameter("txtciudad") != "") {
+							&& request.getParameter("txttelefono") != "" && request.getParameter("idCiudad") != ""
+							&& request.getParameter("txtrol") != "") {
 						Clientes cliente = new Clientes();
 						cliente.setCedulaCliente(Long.parseLong(request.getParameter("txtcedula")));
 						cliente.setDireccionCliente(request.getParameter("txtdireccion"));
 						cliente.setEmailCliente(request.getParameter("txtemail"));
 						cliente.setNombreCliente(request.getParameter("txtnombre"));
 						cliente.setTelefonoCliente(request.getParameter("txttelefono"));
-						cliente.setCiudad(request.getParameter("txtciudad"));
+						cliente.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
+						cliente.setRol(request.getParameter("txtrol"));
 
 						int respuesta = 0;
 						try {
@@ -841,12 +849,12 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Agregar")) {
 				if (request.getParameter("txtnit") != "" && request.getParameter("txtnombre") != ""
-						&& request.getParameter("txtciudad") != "" && request.getParameter("txtdireccion") != ""
+						&& request.getParameter("idCiudad") != "" && request.getParameter("txtdireccion") != ""
 						&& request.getParameter("txttelefono") != "") {
 					Proveedores proveedor = new Proveedores();
 					proveedor.setNitProveedor(Long.parseLong(request.getParameter("txtnit")));
 					proveedor.setNombreProveedor(request.getParameter("txtnombre"));
-					proveedor.setCiudadProveedor(request.getParameter("txtciudad"));
+					proveedor.setIdCiudad(Integer.parseInt( request.getParameter("idCiudad")));
 					proveedor.setDireccionProveedor(request.getParameter("txtdireccion"));
 					proveedor.setTelefonoProveedor(request.getParameter("txttelefono"));
 
@@ -915,12 +923,12 @@ public class Controlador extends HttpServlet {
 				if (request.getParameter("txtnit") != "") {
 
 					if (request.getParameter("txtnit") != "" && request.getParameter("txtnombre") != ""
-							&& request.getParameter("txtciudad") != "" && request.getParameter("txtdireccion") != ""
+							&& request.getParameter("idCiudad") != "" && request.getParameter("txtdireccion") != ""
 							&& request.getParameter("txttelefono") != "") {
 						Proveedores proveedor = new Proveedores();
 						proveedor.setNitProveedor(Long.parseLong(request.getParameter("txtnit")));
 						proveedor.setNombreProveedor(request.getParameter("txtnombre"));
-						proveedor.setCiudadProveedor(request.getParameter("txtciudad"));
+						proveedor.setIdCiudad(Integer.parseInt( request.getParameter("idCiudad")));
 						proveedor.setDireccionProveedor(request.getParameter("txtdireccion"));
 						proveedor.setTelefonoProveedor(request.getParameter("txttelefono"));
 

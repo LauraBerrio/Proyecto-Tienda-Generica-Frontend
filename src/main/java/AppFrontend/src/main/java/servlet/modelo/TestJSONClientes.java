@@ -37,7 +37,8 @@ public class TestJSONClientes {
 			cliente.setEmailCliente(innerObj.get("emailCliente").toString());
 			cliente.setNombreCliente(innerObj.get("nombreCliente").toString());
 			cliente.setTelefonoCliente(innerObj.get("telefonoCliente").toString());
-			cliente.setCiudad(innerObj.get("ciudad").toString());
+			cliente.setIdCiudad(Integer.parseInt(innerObj.get("idCiudad").toString()));
+			cliente.setRol(innerObj.get("rol").toString());
 			lista.add(cliente);
 		}
 		return lista;
@@ -145,9 +146,11 @@ public class TestJSONClientes {
 				+ "\",\"emailCliente\": \""	+ cliente.getEmailCliente() 
 				+ "\",\"nombreCliente\":\"" + cliente.getNombreCliente()
 				+ "\",\"telefonoCliente\":\"" + cliente.getTelefonoCliente()
-				+ "\",\"ciudad\":\"" + cliente.getCiudad()
+				+ "\",\"idCiudad\":\"" + cliente.getIdCiudad()
+				+ "\",\"rol\":\"" + cliente.getRol()
 				+ "\"}";
-
+		
+		
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
 		stream.write(out);
@@ -175,8 +178,8 @@ public class TestJSONClientes {
 
 		String data = "{" + "\"cedulaCliente\":\"" + id + "\",\"direccionCliente\": \"" + cliente.getDireccionCliente()
 				+ "\",\"emailCliente\": \"" + cliente.getEmailCliente() + "\",\"nombreCliente\":\""
-				+ cliente.getNombreCliente() + "\",\"telefonoCliente\":\"" + cliente.getTelefonoCliente() + "\",\"ciudad\":\"" + cliente.getCiudad()
-				+ "\"}";
+				+ cliente.getNombreCliente() + "\",\"telefonoCliente\":\"" + cliente.getTelefonoCliente() + "\",\"idCiudad\":\"" + cliente.getIdCiudad()
+				+ "\",\"rol\":\"" + cliente.getRol() + "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
 		stream.write(out);

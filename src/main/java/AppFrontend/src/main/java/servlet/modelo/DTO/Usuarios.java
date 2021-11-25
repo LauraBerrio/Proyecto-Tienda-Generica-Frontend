@@ -7,7 +7,8 @@ public class Usuarios {
 	private String emailUsuario;
 	private String usuario;
 	private String password;
-	private String ciudad;
+	private int idCiudad;
+	private String rol;
 	
 	public long getCedulaUsuario() {
 		return cedulaUsuario;
@@ -38,12 +39,18 @@ public class Usuarios {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}	
+	public int getIdCiudad() {
+		return idCiudad;
 	}
-	public String getCiudad() {
-		return ciudad;
+	public void setIdCiudad(int idCiudad) {
+		this.idCiudad = idCiudad;
 	}
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+	public String getRol() {
+		return rol;
+	}
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
 	
-	}
 }

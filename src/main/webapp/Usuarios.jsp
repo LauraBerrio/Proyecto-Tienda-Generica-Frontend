@@ -125,10 +125,17 @@
                     <input class="input-general" id="input-data-5" type="text" title="Password" name="txtpassword" value="${usuarioSeleccionado.getPassword()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Contraseña</span>
                 </label>
-                <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Ciudad" name="txtciudad" value="${usuarioSeleccionado.getCiudad()}" autocomplete="off">
-                    <span class="input-span-general" id="span-data-5">Ciudad</span>
+                 <label class="input-container-admin input-container-general">
+                    <input class="input-general" id="input-data-5" type="text" title="Rol" name="txtrol" value="${usuarioSeleccionado.getRol()}" autocomplete="off">
+                    <span class="input-span-general" id="span-data-5">Rol</span>
                 </label>
+                <select name="IdCiudad" class="input-container-admin input-container-general input-general" id="input-data-5">
+                	<option selected value="${usuarioSeleccionado.getIdCiudad()}">Seleccione la Ciudad</option>
+                	<option value="11">Bogotá</option>
+                	<option value="5">Medellín</option>
+                	<option value="76">Cali</option>                 
+                 </select>              
+              
             </div>
             <div id="crud-section" class="crud-section">
                 <button class="btn-admin-crud" id="button-add" type="submit" title="Agregar" name="accion" value="Agregar"><img src="./images/plus.svg" alt=""></button>

@@ -34,18 +34,18 @@
 
     <nav class="navbar">
         <div>
-            <a class="btn-admin" id="btn-home" href="ControladorUsuarios?menu=menu">
+            <a class="btn-admin" id="btn-home" href="ControladorUsuarios?menuUsuarios=menuUsuarios">
                 <span class="btn-span">Inicio</span>
                 <div class="logo">
                 </div>
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin" id="btn-customers" href="ControladorUsuarios?menu=Clientes&accion=Listar">
+            <a class="btn-admin" id="btn-customers" href="ControladorUsuarios?menuUsuarios=Clientes&accion=Listar">
                 <span class="btn-span">Clientes</span>
                 <img src="./images/customer.svg" alt="customer">
             </a>
-            <a class="btn-admin white" id="btn-sales" href="ControladorUsuarios?menu=Ventas&accion=Listar">
+            <a class="btn-admin white" id="btn-sales" href="ControladorUsuarios?menuUsuarios=Ventas&accion=Listar">
                 <span class="btn-span">Ventas</span>
                 <img src="./images/sale.svg" alt="sales">
             </a>
@@ -85,7 +85,7 @@
                             <div class="form-group">
                                 <label> Datos Clientes</label>
                             </div>
-                            <input type="hidden" name="menu" value="Ventas">
+                            <input type="hidden" name="menuUsuarios" value="Ventas">
                             <input type="hidden" name="UsuarioActivo" value="${usuarioSeleccionado.getCedulaUsuario()}" >
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
@@ -192,8 +192,8 @@
                 <div class="card-footer" d-flex>
                     <div class="col-md-8">
                         <!-- enviamos los tres valores al controlador -->
-                        <a class="btn btn-success" onclick="print()" href="Controlador?menu=Ventas&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedulaCliente()}&UsuarioActivo=${usuarioSeleccionado.getCedulaUsuario()}&numerofactura=${numerofactura}">Generar Venta</a>
-                        <a class="btn btn-danger" href="Controlador?menu=Ventas&accion=NuevaVenta">Nueva Venta</a>
+                        <a class="btn btn-success" onclick="print()" href="ControladorUsuarios?menuUsuarios=Ventas&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedulaCliente()}&UsuarioActivo=${usuarioSeleccionado.getCedulaUsuario()}&numerofactura=${numerofactura}">Generar Venta</a>
+                        <a class="btn btn-danger" href="ControladorUsuarios?menuUsuarios=Ventas&accion=NuevaVenta">Nueva Venta</a>
                     </div>
                 </div>
             </div>

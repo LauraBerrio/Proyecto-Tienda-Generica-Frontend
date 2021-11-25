@@ -34,18 +34,18 @@
 
     <nav class="navbar">
         <div>
-            <a class="btn-admin" id="btn-home" href="ControladorUsuarios?menu=menu">
+            <a class="btn-admin" id="btn-home" href="ControladorUsuarios?menuUsuarios=menuUsuarios">
                 <span class="btn-span">Inicio</span>
                 <div class="logo">
                 </div>
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin white" id="btn-customers" href="ControladorUsuarios?menu=Clientes&accion=Listar">
+            <a class="btn-admin white" id="btn-customers" href="ControladorUsuarios?menuUsuarios=Clientes&accion=Listar">
                 <span class="btn-span">Clientes</span>
                 <img src="./images/customer.svg" alt="customer">
             </a>
-            <a class="btn-admin" id="btn-sales" href="ControladorUsuarios?menu=Ventas&accion=Listar">
+            <a class="btn-admin" id="btn-sales" href="ControladorUsuarios?menuUsuarios=Ventas&accion=Listar">
                 <span class="btn-span">Ventas</span>
                 <img src="./images/sale.svg" alt="sales">
             </a>
@@ -86,7 +86,7 @@
             </div>
         </section> -->
         <form id="form-people" class="form-people" action="ControladorUsuarios" method="get">
-            <input type="hidden" name="menu" value="Clientes">
+            <input type="hidden" name="menuUsuarios" value="Clientes">
             <h2 id="title-section" class="title-section">Clientes</h2>
             <div class="input-group-section" id="input-group-section">
                 <label class="input-container-admin input-container-general">
@@ -110,7 +110,7 @@
                     <span class="input-span-general" id="span-data-5">Correo Electronico</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Ciudad" name="txtciudad" value="${clienteSeleccionado.getCiudad()}" autocomplete="off">
+                    <input class="input-general" id="input-data-5" type="text" title="Ciudad" name="idCiudad" value="${clienteSeleccionado.getCiudad()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Ciudad</span>
                 </label>
             </div>

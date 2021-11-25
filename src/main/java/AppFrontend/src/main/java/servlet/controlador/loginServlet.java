@@ -41,7 +41,11 @@ public class loginServlet extends HttpServlet {
 			for (Usuarios usuario : lista) {
 				if (usuario.getUsuario().equals(usua) && usuario.getPassword().equals(pass)) {
 					request.setAttribute("usuario", usuario);
-					request.getRequestDispatcher("/menu.jsp").forward(request, response);					
+					if (usuario.getRol().equals("admin")) {
+						request.getRequestDispatcher("/menu.jsp").forward(request, response);
+					}else if (usuario.getRol().equals("user")) {
+						request.getRequestDispatcher("/menuUsuarios.jsp").forward(request, response);
+					}													
 					respuesta = 1;
 					validarUsuario(usuario);
 				}

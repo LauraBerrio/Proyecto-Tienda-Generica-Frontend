@@ -125,10 +125,12 @@
                     <input class="input-general" id="input-data-5" type="text" title="Correo Electronico" name="txtemail" value="${clienteSeleccionado.getEmailCliente()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Correo Electronico</span>
                 </label>
-                <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Ciudad" name="txtciudad" value="${clienteSeleccionado.getCiudad()}" autocomplete="off">
-                    <span class="input-span-general" id="span-data-5">Ciudad</span>
-                </label>
+                 <select name="idCiudad" class="input-container-admin input-container-general input-general" id="input-data-5">
+                	<option selected value="${clienteSeleccionado.getIdCiudad()}">Seleccione la Ciudad</option>
+                	<option value="11">Bogotá</option>
+                	<option value="5">Medellín</option>
+                	<option value="76">Cali</option>                 
+                 </select> 
             </div>
             <div id="crud-section" class="crud-section">
                 <button class="btn-admin-crud" type="submit" title="Agregar" name="accion" value="Agregar"><img src="./images/plus.svg" alt=""></button>

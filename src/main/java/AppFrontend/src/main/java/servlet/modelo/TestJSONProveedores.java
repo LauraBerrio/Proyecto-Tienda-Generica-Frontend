@@ -34,7 +34,7 @@ public class TestJSONProveedores {
 			proveedor.setNitProveedor(Long.parseLong(innerObj.get("nitProveedor").toString())); // convertir de String a
 																								// Long
 			proveedor.setNombreProveedor(innerObj.get("nombreProveedor").toString());
-			proveedor.setCiudadProveedor(innerObj.get("ciudadProveedor").toString());
+			proveedor.setIdCiudad(Integer.parseInt(innerObj.get("ciudadProveedor").toString()));
 			proveedor.setDireccionProveedor(innerObj.get("direccionProveedor").toString());
 			proveedor.setTelefonoProveedor(innerObj.get("telefonoProveedor").toString());
 			lista.add(proveedor);
@@ -112,8 +112,8 @@ public class TestJSONProveedores {
 		http.setRequestProperty("Content-Type", "application/json");
 
 		String data = "{" + "\"nitProveedor\":\"" + String.valueOf(proveedor.getNitProveedor())
-				+ "\",\"nombreProveedor\": \"" + proveedor.getNombreProveedor() + "\",\"ciudadProveedor\": \""
-				+ proveedor.getCiudadProveedor() + "\",\"direccionProveedor\":\"" + proveedor.getDireccionProveedor()
+				+ "\",\"nombreProveedor\": \"" + proveedor.getNombreProveedor() + "\",\"idCiudad\": \""
+				+ proveedor.getIdCiudad() + "\",\"direccionProveedor\":\"" + proveedor.getDireccionProveedor()
 				+ "\",\"telefonoProveedor\":\"" + proveedor.getTelefonoProveedor() + "\"}";
 
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
@@ -142,7 +142,7 @@ public class TestJSONProveedores {
 		http.setRequestProperty("Content-Type", "application/json");
 
 		String data = "{" + "\"nitProveedor\":\"" + id + "\",\"nombreProveedor\": \"" + proveedor.getNombreProveedor()
-				+ "\",\"ciudadProveedor\": \"" + proveedor.getCiudadProveedor() + "\",\"direccionProveedor\":\""
+				+ "\",\"idCiudad\": \"" + proveedor.getIdCiudad() + "\",\"direccionProveedor\":\""
 				+ proveedor.getDireccionProveedor() + "\",\"telefonoProveedor\":\"" + proveedor.getTelefonoProveedor()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);

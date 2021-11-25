@@ -159,14 +159,14 @@ public class ControladorUsuarios extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String menu = request.getParameter("menu");
+		String menuUsuario = request.getParameter("menuUsuarios");
 		String accion = request.getParameter("accion");
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		switch (menu) {
-		case "menu":
-			request.getRequestDispatcher("/menu.jsp").forward(request, response);
+		switch (menuUsuario) {
+		case "menuUsuarios":
+			request.getRequestDispatcher("/menuUsuarios.jsp").forward(request, response);
 			break;
 //******************************************CLIENTES*********************************************
 					case "Clientes":
@@ -180,14 +180,14 @@ public class ControladorUsuarios extends HttpServlet {
 						} else if (accion.equals("Agregar")) {
 							if (request.getParameter("txtcedula") != "" && request.getParameter("txtdireccion") != ""
 									&& request.getParameter("txtemail") != "" && request.getParameter("txtnombre") != ""
-									&& request.getParameter("txttelefono") != "" && request.getParameter("txtciudad") != "") {
+									&& request.getParameter("txttelefono") != "" && request.getParameter("idCiudad") != "") {
 								Clientes cliente = new Clientes();
 								cliente.setCedulaCliente(Long.parseLong(request.getParameter("txtcedula")));
 								cliente.setDireccionCliente(request.getParameter("txtdireccion"));
 								cliente.setEmailCliente(request.getParameter("txtemail"));
 								cliente.setNombreCliente(request.getParameter("txtnombre"));
 								cliente.setTelefonoCliente(request.getParameter("txttelefono"));
-								cliente.setCiudad(request.getParameter("txtciudad"));
+								cliente.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
 
 								int respuesta = 0;
 								try {
@@ -254,14 +254,14 @@ public class ControladorUsuarios extends HttpServlet {
 							if (request.getParameter("txtcedula") != "") {
 								if (request.getParameter("txtcedula") != "" && request.getParameter("txtdireccion") != ""
 										&& request.getParameter("txtemail") != "" && request.getParameter("txtnombre") != ""
-										&& request.getParameter("txttelefono") != "" && request.getParameter("txtciudad") != "") {
+										&& request.getParameter("txttelefono") != "" && request.getParameter("idCiudad") != "") {
 									Clientes cliente = new Clientes();
 									cliente.setCedulaCliente(Long.parseLong(request.getParameter("txtcedula")));
 									cliente.setDireccionCliente(request.getParameter("txtdireccion"));
 									cliente.setEmailCliente(request.getParameter("txtemail"));
 									cliente.setNombreCliente(request.getParameter("txtnombre"));
 									cliente.setTelefonoCliente(request.getParameter("txttelefono"));
-									cliente.setCiudad(request.getParameter("txtciudad"));
+									cliente.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
 
 									int respuesta = 0;
 									try {
@@ -495,7 +495,7 @@ public class ControladorUsuarios extends HttpServlet {
 							}
 						}
 
-						request.getRequestDispatcher("/Clientes.jsp").forward(request, response);
+						request.getRequestDispatcher("/clientesUsuarios.jsp").forward(request, response);
 						break;
 //*******************************************VENTAS**********************************************
 					case "Ventas":
@@ -583,7 +583,7 @@ public class ControladorUsuarios extends HttpServlet {
 								if (respuesta == 200) {
 									System.out.println("Grabacion Exitosa " + respuesta);
                                     //this.grabarDetalle(ventas.getCodigoVenta(), request, response);
-									request.getRequestDispatcher("/Ventas.jsp").forward(request, response);
+									request.getRequestDispatcher("/ventasUsuarios.jsp").forward(request, response);
 								} else {
 									write.println("error ventas");
 								}
@@ -598,7 +598,7 @@ public class ControladorUsuarios extends HttpServlet {
 							// String factura= request.gesetAttribute("numerofactura");
 							this.buscarFactura(factura, request, response);
 						}
-						request.getRequestDispatcher("/Ventas.jsp").forward(request, response);
+						request.getRequestDispatcher("/ventasUsuarios.jsp").forward(request, response);
 						break;
 						
 					case "Salir":

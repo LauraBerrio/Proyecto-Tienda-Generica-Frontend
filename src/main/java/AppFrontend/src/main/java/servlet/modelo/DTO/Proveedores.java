@@ -5,7 +5,7 @@ public class Proveedores {
 	
 	private long nitProveedor;	
 	private String nombreProveedor;	
-	private String ciudadProveedor;	
+	private int idCiudad;	
 	private String direccionProveedor;	
 	private String telefonoProveedor;
 	
@@ -21,11 +21,11 @@ public class Proveedores {
 	public void setNombreProveedor(String nombreProveedor) {
 		this.nombreProveedor = nombreProveedor;
 	}
-	public String getCiudadProveedor() {
-		return ciudadProveedor;
+	public int getIdCiudad() {
+		return idCiudad;
 	}
-	public void setCiudadProveedor(String ciudadProveedor) {
-		this.ciudadProveedor = ciudadProveedor;
+	public void setIdCiudad(int idCiudad) {
+		this.idCiudad = idCiudad;
 	}
 	public String getDireccionProveedor() {
 		return direccionProveedor;

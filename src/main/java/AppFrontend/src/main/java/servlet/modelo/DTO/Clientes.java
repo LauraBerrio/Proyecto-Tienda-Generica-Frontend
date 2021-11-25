@@ -12,10 +12,18 @@ public class Clientes {
 	
 	 private String nombreCliente;
 	
-	 private String telefonoCliente;
+	 private String telefonoCliente; 
 	 
-	 private String ciudad;
+	 private String rol;
+	 
+	 private int idCiudad;
 	
+	public String getRol() {
+		return rol;
+	}
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
 	public long getCedulaCliente() {
 		return cedulaCliente;
 	}
@@ -46,11 +54,11 @@ public class Clientes {
 	public void setTelefonoCliente(String telefonoCliente) {
 		this.telefonoCliente = telefonoCliente;
 	}
-	public String getCiudad() {
-		return ciudad;
+	public int getIdCiudad() {
+		return idCiudad;
 	}
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+	public void setIdCiudad(int idCiudad) {
+		this.idCiudad = idCiudad;
 	}
 	 
 }
