@@ -41,11 +41,11 @@
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin white" id="btn-customers" href="ControladorUsuarios?menuUsuarios=Clientes&accion=Listar">
+            <a class="btn-admin white" id="btn-customers" href="ControladorUsuarios?menuUsuarios=clientesUsuarios&accion=Listar">
                 <span class="btn-span">Clientes</span>
                 <img src="./images/customer.svg" alt="customer">
             </a>
-            <a class="btn-admin" id="btn-sales" href="ControladorUsuarios?menuUsuarios=Ventas&accion=Listar">
+            <a class="btn-admin" id="btn-sales" href="ControladorUsuarios?menuUsuarios=ventasUsuarios&accion=Listar">
                 <span class="btn-span">Ventas</span>
                 <img src="./images/sale.svg" alt="sales">
             </a>

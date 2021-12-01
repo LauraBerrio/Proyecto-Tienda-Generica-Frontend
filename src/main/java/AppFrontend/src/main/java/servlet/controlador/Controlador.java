@@ -1,6 +1,10 @@
 package AppFrontend.src.main.java.servlet.controlador;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ArrayList;
@@ -14,6 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.parser.ParseException;
+
+import com.opencsv.CSVReader;
 
 import AppFrontend.src.main.java.servlet.modelo.TestJSONUsuarios;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONVentas;
@@ -183,16 +189,16 @@ public class Controlador extends HttpServlet {
 			if (accion.equals("Agregar")) {
 				if (request.getParameter("txtcedula") != "" && request.getParameter("txtnombre") != ""
 						&& request.getParameter("txtemail") != "" && request.getParameter("txtusuario") != ""
-						&& request.getParameter("txtpassword") != "" && request.getParameter("idCiudad") != ""
-						&& request.getParameter("txtrol") != "") {
+						&& request.getParameter("txtpassword") != "" && request.getParameter("txtrol") != ""
+						&& request.getParameter("idCiudad") != "") {
 					Usuarios usuario = new Usuarios();
 					usuario.setCedulaUsuario(Long.parseLong(request.getParameter("txtcedula")));
 					usuario.setNombreUsuario(request.getParameter("txtnombre"));
 					usuario.setEmailUsuario(request.getParameter("txtemail"));
 					usuario.setUsuario(request.getParameter("txtusuario"));
-					usuario.setPassword(request.getParameter("txtpassword"));
-					usuario.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
+					usuario.setPassword(request.getParameter("txtpassword"));					
 					usuario.setRol(request.getParameter("txtrol"));
+					usuario.setIdCiudad(Integer.parseInt(request.getParameter("IdCiudad")));
 
 					int respuesta = 0;
 					try {
@@ -261,16 +267,16 @@ public class Controlador extends HttpServlet {
 				if (request.getParameter("txtcedula") != "") {
 					if (request.getParameter("txtcedula") != "" && request.getParameter("txtnombre") != ""
 							&& request.getParameter("txtemail") != "" && request.getParameter("txtusuario") != ""
-							&& request.getParameter("txtpassword") != "" && request.getParameter("idCiudad") != ""
-							&& request.getParameter("txtrol") != "") {
+							&& request.getParameter("txtpassword") != "" && request.getParameter("txtrol") != ""
+							&& request.getParameter("idCiudad") != "") {
 						Usuarios usuario = new Usuarios();
 						usuario.setCedulaUsuario(Long.parseLong(request.getParameter("txtcedula")));
 						usuario.setNombreUsuario(request.getParameter("txtnombre"));
 						usuario.setEmailUsuario(request.getParameter("txtemail"));
 						usuario.setUsuario(request.getParameter("txtusuario"));
-						usuario.setPassword(request.getParameter("txtpassword"));
-						usuario.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
+						usuario.setPassword(request.getParameter("txtpassword"));						
 						usuario.setRol(request.getParameter("txtrol"));
+						usuario.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
 
 						int respuesta = 0;
 						try {
@@ -517,7 +523,7 @@ public class Controlador extends HttpServlet {
 				if (request.getParameter("txtcedula") != "" && request.getParameter("txtdireccion") != ""
 						&& request.getParameter("txtemail") != "" && request.getParameter("txtnombre") != ""
 						&& request.getParameter("txttelefono") != "" && request.getParameter("idCiudad") != ""
-						&& request.getParameter("txtrol") != "") {
+						) {
 					Clientes cliente = new Clientes();
 					cliente.setCedulaCliente(Long.parseLong(request.getParameter("txtcedula")));
 					cliente.setDireccionCliente(request.getParameter("txtdireccion"));
@@ -525,7 +531,7 @@ public class Controlador extends HttpServlet {
 					cliente.setNombreCliente(request.getParameter("txtnombre"));
 					cliente.setTelefonoCliente(request.getParameter("txttelefono"));
 					cliente.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
-					cliente.setRol(request.getParameter("txtrol"));
+					
 
 					int respuesta = 0;
 					try {
@@ -593,7 +599,7 @@ public class Controlador extends HttpServlet {
 					if (request.getParameter("txtcedula") != "" && request.getParameter("txtdireccion") != ""
 							&& request.getParameter("txtemail") != "" && request.getParameter("txtnombre") != ""
 							&& request.getParameter("txttelefono") != "" && request.getParameter("idCiudad") != ""
-							&& request.getParameter("txtrol") != "") {
+							) {
 						Clientes cliente = new Clientes();
 						cliente.setCedulaCliente(Long.parseLong(request.getParameter("txtcedula")));
 						cliente.setDireccionCliente(request.getParameter("txtdireccion"));
@@ -601,7 +607,7 @@ public class Controlador extends HttpServlet {
 						cliente.setNombreCliente(request.getParameter("txtnombre"));
 						cliente.setTelefonoCliente(request.getParameter("txttelefono"));
 						cliente.setIdCiudad(Integer.parseInt(request.getParameter("idCiudad")));
-						cliente.setRol(request.getParameter("txtrol"));
+						
 
 						int respuesta = 0;
 						try {
@@ -1168,7 +1174,43 @@ public class Controlador extends HttpServlet {
 			break;
 			
 			//********************************PRODUCTOS**********************************
-		case "Productos":
+		case "Productos":					
+				
+			//*******************CSV*******************
+			String ruta = "C:\\Users\\Laura\\Documents\\Backup Oct 2021\\Disco D\\Laura\\Laura\\MinTIC\\WebApp\\Proyecto\\productos.csv";
+			File file = new File(ruta);
+			FileReader archCSV = null;
+		    CSVReader csvReader = null;
+		    
+		    try {
+		    		    		    	
+		        //Leo el archivo con el separador estándar ","
+		         archCSV = new FileReader(ruta);
+		         csvReader = new CSVReader(archCSV);
+		         String[] fila = null;
+		         while((fila = csvReader.readNext()) != null) {
+		             System.out.println(fila[0]
+		                       + " | " + fila[1]
+		                       + " |  " + fila[2]);
+		         }
+		    }
+		      catch(IOException e) {
+		 	        System.out.println(e);
+		 	  }
+		 	  catch(Exception e) {
+		 	        System.out.println(e);
+		 	  }
+		 	  finally {
+		 	        try { 
+		 	          archCSV.close();
+		 	          csvReader.close();
+		 	        }
+		 	        catch(IOException e) {
+		 	          System.out.println(e);
+		 	        }
+		 	      }
+		      //*********CRUD***********   
+			
 			if (accion.equals("Listar")) {
 				try {
 					ArrayList<Productos> lista = TestJSONProductos.getJSONProductos();
@@ -1388,6 +1430,7 @@ public class Controlador extends HttpServlet {
 			if (accion.equals("BuscarCliente")) {
 				String id = request.getParameter("cedulacliente");// como esta en ventas
 				this.buscarCliente(Long.parseLong(id), request, response);
+				
 			} else if (accion.equals("BuscarProducto")) {
 				String id = request.getParameter("cedulacliente");// como esta en ventas y lo repite
 				this.buscarCliente(Long.parseLong(id), request, response);
@@ -1413,6 +1456,7 @@ public class Controlador extends HttpServlet {
 					cantidad = Integer.parseInt(request.getParameter("cantidadproducto"));
 					iva = Double.parseDouble(request.getParameter("ivaproducto"));
 					String numFact = request.getParameter("numerofactura");
+					
 
 					subtotal = (precio * cantidad);
 					valor_iva = subtotal * iva / 100;

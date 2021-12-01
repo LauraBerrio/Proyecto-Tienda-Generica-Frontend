@@ -37,8 +37,7 @@ public class TestJSONClientes {
 			cliente.setEmailCliente(innerObj.get("emailCliente").toString());
 			cliente.setNombreCliente(innerObj.get("nombreCliente").toString());
 			cliente.setTelefonoCliente(innerObj.get("telefonoCliente").toString());
-			cliente.setIdCiudad(Integer.parseInt(innerObj.get("idCiudad").toString()));
-			cliente.setRol(innerObj.get("rol").toString());
+			cliente.setIdCiudad(Integer.parseInt(innerObj.get("idCiudad").toString()));			
 			lista.add(cliente);
 		}
 		return lista;

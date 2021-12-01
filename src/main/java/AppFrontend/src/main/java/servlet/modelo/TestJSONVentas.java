@@ -39,6 +39,7 @@ public class TestJSONVentas {
 			Venta.setIvaVenta(Double.parseDouble(innerObj.get("ivaVenta").toString()));
 			Venta.setTotalVenta(Double.parseDouble(innerObj.get("totalVenta").toString()));
 			Venta.setNombreCliente(innerObj.get("nombreCliente").toString());
+			Venta.setIdCiudad(Integer.parseInt( innerObj.get("idCiudad").toString()));
 			lista.add(Venta);
 		}
 		return lista;
@@ -145,7 +146,8 @@ public class TestJSONVentas {
 				+ String.valueOf(ventas.getCedulaCliente()) + "\",\"valorVenta\":\""
 				+ String.valueOf(ventas.getValorVenta()) + "\",\"ivaVenta\":\"" + String.valueOf(ventas.getIvaVenta())
 				+ "\",\"totalVenta\":\"" + String.valueOf(ventas.getTotalVenta()) + "\",\"nombreCliente\":\""
-				+ String.valueOf(ventas.getNombreCliente()) + "\"}";
+				+ String.valueOf(ventas.getNombreCliente())  + "\",\"idCiudad\":\""
+				+ String.valueOf(ventas.getIdCiudad()) + "\"}" ;
 
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -176,7 +178,8 @@ public class TestJSONVentas {
 				+ String.valueOf(ventas.getCedulaCliente()) + "\",\"valorVenta\":\""
 				+ String.valueOf(ventas.getValorVenta()) + "\",\"ivaVenta\":\"" + String.valueOf(ventas.getIvaVenta())
 				+ "\",\"totalVenta\":\"" + String.valueOf(ventas.getTotalVenta()) + "\",\"nombreCliente\":\""
-				+ String.valueOf(ventas.getNombreCliente()) + "\"}";
+				+ String.valueOf(ventas.getNombreCliente()) + "\",\"idCiudad\":\""
+						+ String.valueOf(ventas.getIdCiudad()) + "\"}";
 
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();

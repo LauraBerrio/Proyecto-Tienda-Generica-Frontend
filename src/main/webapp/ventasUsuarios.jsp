@@ -41,11 +41,11 @@
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin" id="btn-customers" href="ControladorUsuarios?menuUsuarios=Clientes&accion=Listar">
+            <a class="btn-admin" id="btn-customers" href="ControladorUsuarios?menuUsuarios=clientesUsuarios&accion=Listar">
                 <span class="btn-span">Clientes</span>
                 <img src="./images/customer.svg" alt="customer">
             </a>
-            <a class="btn-admin white" id="btn-sales" href="ControladorUsuarios?menuUsuarios=Ventas&accion=Listar">
+            <a class="btn-admin white" id="btn-sales" href="ControladorUsuarios?menuUsuarios=ventasUsuarios&accion=Listar">
                 <span class="btn-span">Ventas</span>
                 <img src="./images/sale.svg" alt="sales">
             </a>
@@ -80,7 +80,7 @@
         <div class="row">
             <div class="col-md-5 seccion1">
                 <form method="get" action="ControladorUsuarios">
-                    <div class="card">
+                    <div class="title-section">
                         <div class="card-body">
                             <div class="form-group">
                                 <label> Datos Clientes</label>
@@ -92,16 +92,18 @@
                                     <input type="number" name="cedulacliente" class="form-control"
                                         placeholder="cedula cliente" value="${clienteSeleccionado.getCedulaCliente()}">
                                     <input type="submit" name="accion" value="BuscarCliente"
-                                        class="btn btn-outline-info">
+                                        class="btn btn-outline-light">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" name="nombrecliente" class="form-control"
                                         placeholder="Nombre Cliente" value="${clienteSeleccionado.getNombreCliente()}">
+                                      
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    
+                    <div class="form-group title-section">
                         <div class="card-body">
                             <div class="form-group">
                                 <label> Datos Productos </label>
@@ -111,7 +113,7 @@
                                     <input type="number" name="codigoproducto" class="form-control"
                                         placeholder="codigo producto" value="${productoSeleccionado.getCodigoProducto()}">
                                     <input type="submit" name="accion" value="BuscarProducto"
-                                        class="btn btn-outline-info">
+                                        class="btn btn-outline-dark">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" name="nombreproducto" class="form-control"
@@ -141,15 +143,15 @@
                 </form>
             </div>
             <div class="col-md-7 seccion2">
-                <div class="card">
+                <div >
                     <div class="card-header">
-                        <div class="form-group row">
+                        <div class="form-group row title-section">
                         <h3>Numero de factura</h3>
                         <input class="form-control col-md-4" type="text" name="numerofactura" value="${numerofactura}">
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-dark">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>#</th>
@@ -178,9 +180,9 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="col-md-4">
-                            <label>Subtotal</label></br> </br>
-                            <label>iva</label></br> </br>
-                            <label>total a pagar</label></br> </br>
+                            <label class="text-white">Subtotal</label></br> </br>
+                            <label class="text-white">iva</label></br> </br>
+                            <label class="text-white">total a pagar</label></br> </br>
                         </div>
                         <div class="col-md-4">
                             <input type="text" name="txtsubtotal" class="form-control" placeholder="$ 00.000.00" disabled="disabled" value="${totalsubtotal}">
@@ -192,8 +194,8 @@
                 <div class="card-footer" d-flex>
                     <div class="col-md-8">
                         <!-- enviamos los tres valores al controlador -->
-                        <a class="btn btn-success" onclick="print()" href="ControladorUsuarios?menuUsuarios=Ventas&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedulaCliente()}&UsuarioActivo=${usuarioSeleccionado.getCedulaUsuario()}&numerofactura=${numerofactura}">Generar Venta</a>
-                        <a class="btn btn-danger" href="ControladorUsuarios?menuUsuarios=Ventas&accion=NuevaVenta">Nueva Venta</a>
+                        <a class="btn btn-success" onclick="print()" href="ControladorUsuarios?menuUsuarios=ventasUsuarios&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedulaCliente()}&UsuarioActivo=${usuarioSeleccionado.getCedulaUsuario()}&numerofactura=${numerofactura}">Generar Venta</a>
+                        <a class="btn btn-danger" href="ControladorUsuarios?menuUsuarios=ventasUsuarios&accion=NuevaVenta">Nueva Venta</a>
                     </div>
                 </div>
             </div>

@@ -38,7 +38,7 @@
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin" id="btn-customers" href="ControladorUsuarios?menu=clientesUsuarios&accion=Listar">
+            <a class="btn-admin" id="btn-customers" href="ControladorUsuarios?menuUsuarios=clientesUsuarios&accion=Listar">
                 <span class="btn-span">Clientes</span>
                 <img src="./images/customer.svg" alt="customer">
             </a>

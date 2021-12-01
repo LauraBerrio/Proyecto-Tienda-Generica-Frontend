@@ -8,6 +8,15 @@ public class Ventas {
 	private double ivaVenta;
 	private double totalVenta;
 	private String nombreCliente;
+	private int idCiudad;
+	
+	public int getIdCiudad() {
+		return idCiudad;
+	}
+
+	public void setIdCiudad(int idCiudad) {
+		this.idCiudad = idCiudad;
+	}
 		
 	public String getNombreCliente() {
 		return nombreCliente;
@@ -32,8 +41,6 @@ public class Ventas {
 	public void setCedulaCliente(long cedulaCliente) {
 		this.cedulaCliente = cedulaCliente;
 	}
-
-	
 
 	public double getValorVenta() {
 		return valorVenta;

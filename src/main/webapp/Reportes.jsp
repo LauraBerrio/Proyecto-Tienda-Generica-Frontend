@@ -93,35 +93,35 @@
     </nav>
 
     <main>
-        <div class="row">
-            <div class="col-md-5 seccion1">
-            <form action="Controlador" method="get">
-                <div class="card">
+        <div class=" form-people">
+            <div >
+            <form action="Controlador" method="get" class= "form-people" >
+                <div >
                     <div class="card-body">
-                        <div class="form-group">
+                        <div class="form-group title-section">
                             <h2>Seleccione tipo de reporte</h2>
                         </div>
                         <input type="hidden" name="menu" value="Reportes">
                         <div class="form-group d-flex">
                             <div class="col-sm-6 d-flex">
-                                <input type="submit" name="accion" value="ReporteUsuarios" class="btn btn-outline-info" >
-                                <input type="submit" name="accion" value="ReporteClientes" class="btn btn-outline-info" >
-                                <input type="submit" name="accion" value="ReporteVentas" class="btn btn-outline-info" >
+                                <input type="submit" name="accion" value="ReporteUsuarios" class="btn btn-outline-light" >
+                                <input type="submit" name="accion" value="ReporteClientes" class="btn btn-outline-light" >
+                                <input type="submit" name="accion" value="ReporteVentas" class="btn btn-outline-light" >
                             </div>
                         </div>
                     </div>
                 </div>
                 </form>
             </div>
-            <h2> Detalle del Reporte</h2>
-            <div class="col-md-7 seccion2">
-                <div class="card">
+            <h2 class="form-group title-section"> Detalle del Reporte</h2>
+            <div >
+                <div  >
                     <div class="card-body">
-                        <div class="form-group">
+                        <div class="input-container-admin ">
 
                         </div>
-                        <!-- <table class="table table-dark table-striped">-->
-                        <table class="table table-striped">
+                          <table class="table table-dark table-striped table-hover">
+                      <!-- <table class="table table-striped ">-->
                         <c:if test="${opcion==1}">
                             <thead>
                                 <tr>
@@ -139,7 +139,7 @@
                                     <td>${lista.getNombreUsuario()}</td>
                                     <td>${lista.getEmailUsuario()}</td>
                                     <td>${lista.getUsuario()}</td>
-                                    <td>${lista.getCiudad()}</td>
+                                    <td>${lista.getIdCiudad()}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -163,7 +163,7 @@
                                     <td>${lista.getEmailCliente()}</td>
                                     <td>${lista.getNombreCliente()}</td>
                                     <td>${lista.getTelefonoCliente()}</td>
-                                    <td>${lista.getCiudad()}</td>
+                                    <td>${lista.getIdCiudad()}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

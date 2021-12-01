@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/admin-tablet.css" media="(min-width: 500px)">
     <link rel="stylesheet" href="./css/admin-desktop.css" media="(min-width: 750px)">
     <link rel="stylesheet" href="./css/fix.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
 </head>
 <body>
     <div class="background" style="display: none;">
@@ -96,38 +97,41 @@
         <div class="row">
             <div class="col-md-5 seccion1">
                 <form method="get" action="Controlador">
-                    <div class="card">
+                    <div class="title-section" >
                         <div class="card-body">
                             <div class="form-group">
                                 <label> Datos Clientes</label>
-                            </div>
-                            <input type="hidden" name="menu" value="Ventas">
-                            <input type="hidden" name="UsuarioActivo" value="${usuarioSeleccionado.getCedulaUsuario()}" >
+                            </div  >
+                            <input  type="hidden" name="menu" value="Ventas" >
+                            <input  type="hidden" name="UsuarioActivo" value="${usuarioSeleccionado.getCedulaUsuario()}" >
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
                                     <input type="number" name="cedulacliente" class="form-control"
                                         placeholder="cedula cliente" value="${clienteSeleccionado.getCedulaCliente()}">
                                     <input type="submit" name="accion" value="BuscarCliente"
-                                        class="btn btn-outline-info">
+                                        class="btn btn-outline-light">
+                                   
                                 </div>
-                                <div class="col-sm-6">
-                                    <input type="text" name="nombrecliente" class="form-control"
+                                <div class="col-sm-6 ">
+                                    <input type="text" name="nombrecliente" class="form-control text-uppercase fw-bold"
                                         placeholder="Nombre Cliente" value="${clienteSeleccionado.getNombreCliente()}">
+                                	
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    
+                    <div class="form-group title-section">
                         <div class="card-body">
                             <div class="form-group">
                                 <label> Datos Productos </label>
                             </div>
-                            <div class="form-group d-flex">
+                            <div class="form-group d-flex ">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="number" name="codigoproducto" class="form-control"
+                                    <input type="number" name="codigoproducto" class="form-control "
                                         placeholder="codigo producto" value="${productoSeleccionado.getCodigoProducto()}">
                                     <input type="submit" name="accion" value="BuscarProducto"
-                                        class="btn btn-outline-info">
+                                        class="btn btn-outline-dark">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" name="nombreproducto" class="form-control"
@@ -157,18 +161,19 @@
                 </form>
             </div>
             <div class="col-md-7 seccion2">
-                <div class="card">
+                <div class="">
                     <div class="card-header">
-                        <div class="form-group row">
+                        <div class="form-group row title-section">
                         <h3>Numero de factura</h3>
                         <input class="form-control col-md-4" type="text" name="numerofactura" value="${numerofactura}">
                         </div>
                     </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>#</th>
+                    
+                    <div class="card-body ">
+                        <table class="table table-dark">
+                            <thead class="thead-light ">
+                                <tr >
+                                    <th >#</th>
                                     <th>codigo</th>
                                     <th>producto</th>
                                     <th>precio</th>
@@ -179,7 +184,7 @@
                             </thead>
                             <tbody>
                             <c:forEach var="lista" items="${listaventas}">
-                                <tr>
+                                <tr >
                                     <th>${lista.getCodigoDetalleVenta()}</th>
                                     <th>${lista.getCodigoProducto()}</th>
                                     <th>${lista.getDescripcionProducto()}</th>
@@ -192,11 +197,12 @@
                             </tbody>
                         </table>
                     </div>
+                  
                     <div class="card-footer d-flex">
-                        <div class="col-md-4">
-                            <label>Subtotal</label></br> </br>
-                            <label>iva</label></br> </br>
-                            <label>total a pagar</label></br> </br>
+                        <div class="col-md-4 ">
+                            <label class="text-white">Subtotal</label></br> </br>
+                            <label class="text-white">iva</label></br> </br>
+                            <label class="text-white">total a pagar</label></br> </br>
                         </div>
                         <div class="col-md-4">
                             <input type="text" name="txtsubtotal" class="form-control" placeholder="$ 00.000.00" disabled="disabled" value="${totalsubtotal}">
@@ -215,6 +221,7 @@
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>

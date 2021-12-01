@@ -163,13 +163,16 @@ public class ControladorUsuarios extends HttpServlet {
 		String accion = request.getParameter("accion");
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		
+			
+		
 
 		switch (menuUsuario) {
 		case "menuUsuarios":
 			request.getRequestDispatcher("/menuUsuarios.jsp").forward(request, response);
 			break;
 //******************************************CLIENTES*********************************************
-					case "Clientes":
+					case "clientesUsuarios":
 						if (accion.equals("Listar")) {
 							try {
 								ArrayList<Clientes> lista = TestJSONClientes.getJSONClientes();
@@ -207,7 +210,7 @@ public class ControladorUsuarios extends HttpServlet {
 										out.println("<script>"
 												+ "	swal(\"Cliente creado exitosamente.\", \"\", \"success\", {closeOnClickOutside: false});"
 												+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-												+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+												+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 												+ "</script>");
 										out.println("</body></html>");
 									} else {
@@ -245,7 +248,7 @@ public class ControladorUsuarios extends HttpServlet {
 								out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 								out.println("<script>" + "	swal(\"Faltan datos.\", \"\", \"error\", {closeOnClickOutside: false});"
 										+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 										+ "</script>");
 								out.println("</body></html>");
 								out.close();
@@ -282,7 +285,7 @@ public class ControladorUsuarios extends HttpServlet {
 											out.println("<script>"
 													+ "	swal(\"Cliente se actualizo correctamente.\", \"\", \"success\", {closeOnClickOutside: false});"
 													+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-													+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+													+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 													+ "</script>");
 											out.println("</body></html>");
 										} else {
@@ -321,7 +324,7 @@ public class ControladorUsuarios extends HttpServlet {
 									out.println("<script>"
 											+ "	swal(\"Faltan datos.\", \"\", \"error\", {closeOnClickOutside: false});"
 											+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-											+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+											+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 											+ "</script>");
 									out.println("</body></html>");
 									out.close();
@@ -341,7 +344,7 @@ public class ControladorUsuarios extends HttpServlet {
 								out.println("<script>"
 										+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
 										+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 										+ "</script>");
 								out.println("</body></html>");
 								out.close();
@@ -356,7 +359,7 @@ public class ControladorUsuarios extends HttpServlet {
 								for (Clientes clientes : lista1) {
 									if (clientes.getCedulaCliente() == id) {
 										request.setAttribute("clienteSeleccionado", clientes);
-										request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,
+										request.getRequestDispatcher("ControladorUsuarios?menuUsuarios=clientesUsuarios&accion=Listar").forward(request,
 												response);
 									}
 								}
@@ -384,7 +387,7 @@ public class ControladorUsuarios extends HttpServlet {
 										out.println("<script>"
 												+ "	swal(\"El cliente fue eliminado.\", \"\", \"success\", {closeOnClickOutside: false});"
 												+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-												+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+												+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 												+ "</script>");
 										out.println("</body></html>");
 									} else {
@@ -425,7 +428,7 @@ public class ControladorUsuarios extends HttpServlet {
 								out.println("<script>"
 										+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
 										+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 										+ "</script>");
 								out.println("</body></html>");
 								out.close();
@@ -459,7 +462,7 @@ public class ControladorUsuarios extends HttpServlet {
 										out.println("<script>"
 												+ "	swal(\"Cliente no existente.\", \"\", \"error\", {closeOnClickOutside: false});"
 												+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-												+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+												+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 												+ "</script>");
 										out.println("</body></html>");
 										out.close();
@@ -481,7 +484,7 @@ public class ControladorUsuarios extends HttpServlet {
 								out.println("<script>"
 										+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
 										+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
-										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
+										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./clientesUsuarios.jsp\"})"
 										+ "</script>");
 								out.println("</body></html>");
 								out.close();
@@ -498,7 +501,7 @@ public class ControladorUsuarios extends HttpServlet {
 						request.getRequestDispatcher("/clientesUsuarios.jsp").forward(request, response);
 						break;
 //*******************************************VENTAS**********************************************
-					case "Ventas":
+					case "ventasUsuarios":
 // **************** enviaremos la cedula del usuario al formulario ventas
 						request.setAttribute("usuarioSeleccionado", usuarios);
 // **********************************************************************************************

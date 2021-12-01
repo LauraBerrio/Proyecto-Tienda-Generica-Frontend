@@ -123,7 +123,7 @@
                 </label>
                 <label class="input-container-admin input-container-general">
                     <input class="input-general" id="input-data-5" type="text" title="Correo Electronico" name="txtemail" value="${clienteSeleccionado.getEmailCliente()}" autocomplete="off">
-                    <span class="input-span-general" id="span-data-5">Correo Electronico</span>
+                    <span class="input-span-general" id="span-data-5">Correo Electrónico</span>
                 </label>
                  <select name="idCiudad" class="input-container-admin input-container-general input-general" id="input-data-5">
                 	<option selected value="${clienteSeleccionado.getIdCiudad()}">Seleccione la Ciudad</option>

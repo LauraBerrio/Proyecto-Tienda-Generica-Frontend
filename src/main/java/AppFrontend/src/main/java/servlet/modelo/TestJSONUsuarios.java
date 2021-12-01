@@ -44,8 +44,8 @@ public class TestJSONUsuarios {
 			usuario.setNombreUsuario(innerObj.get("nombreUsuario").toString());
 			usuario.setPassword(innerObj.get("password").toString());
 			usuario.setUsuario(innerObj.get("usuario").toString());
-			usuario.setIdCiudad(Integer.parseInt(innerObj.get("idCiudad").toString()));
 			usuario.setRol(innerObj.get("rol").toString());
+			usuario.setIdCiudad(Integer.parseInt(innerObj.get("idCiudad").toString()));
 			
 			lista.add(usuario);
 		}
@@ -154,7 +154,7 @@ public class TestJSONUsuarios {
 		String data = "{" + "\"cedulaUsuario\":\"" + String.valueOf(usuario.getCedulaUsuario())
 				+ "\",\"emailUsuario\": \"" + usuario.getEmailUsuario() + "\",\"nombreUsuario\": \""
 				+ usuario.getNombreUsuario() + "\",\"password\":\"" + usuario.getPassword() + "\",\"usuario\":\""
-				+ usuario.getUsuario() +  "\",\"idCiudad\":\"" + usuario.getIdCiudad() +  "\",\"rol\":\"" + usuario.getRol() + "\"}";
+				+ usuario.getUsuario() + "\",\"rol\":\"" + usuario.getRol() + "\",\"idCiudad\":\"" + usuario.getIdCiudad() +"\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
 		stream.write(out);
@@ -182,7 +182,7 @@ public class TestJSONUsuarios {
 
 		String data = "{" + "\"cedulaUsuario\":\"" + id + "\",\"emailUsuario\": \"" + usuario.getEmailUsuario()
 				+ "\",\"nombreUsuario\": \"" + usuario.getNombreUsuario() + "\",\"password\":\"" + usuario.getPassword()
-				+ "\",\"usuario\":\"" + usuario.getUsuario() + "\",\"idCiudad\":\"" + usuario.getIdCiudad() + "\",\"rol\":\"" + usuario.getRol() + "\"}";
+				+ "\",\"usuario\":\"" + usuario.getUsuario() +  "\",\"rol\":\"" + usuario.getRol() + "\",\"idCiudad\":\"" + usuario.getIdCiudad() + "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
 		stream.write(out);

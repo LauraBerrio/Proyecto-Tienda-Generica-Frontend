@@ -20,6 +20,9 @@
     top: 5px;
     font-size: 1.2rem;
 }
+.letra{
+	color: white;
+}
 
 @media(min-width:500px){
     .input-general {
